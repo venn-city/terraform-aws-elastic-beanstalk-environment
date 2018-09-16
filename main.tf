@@ -936,6 +936,32 @@ resource "aws_elastic_beanstalk_environment" "default" {
     name      = "Notification Topic Name"
     value     = "${var.notification_topic_name}"
   }
+
+  ###===================== NodeJs ===========================================================###
+  setting {
+    namespace = "aws:elasticbeanstalk:container:nodejs"
+    name      = "NodeVersion"
+    value     = "${var.nodejs_version}"
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:container:nodejs"
+    name      = "ProxyServer"
+    value     = "${var.proxy_server}"
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:container:nodejs"
+    name      = "NodeCommand"
+    value     = "${var.nodejs_command}"
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:container:nodejs"
+    name      = "GzipCompression"
+    value     = "${var.nodejs_gzip_compression}"
+  }
+
   depends_on = ["aws_security_group.default"]
 }
 

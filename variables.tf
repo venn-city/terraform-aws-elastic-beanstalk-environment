@@ -260,3 +260,21 @@ variable "version_label" {
   default     = ""
   description = "Elastic Beanstalk Application version to deploy"
 }
+
+variable "nodejs_version" {
+  description = "Node version"
+}
+
+variable "proxy_server" {
+  default = "nginx"
+  description = "Proxy server"
+}
+
+variable "nodejs_command" {
+  description = "Nodejs command"
+}
+
+variable "nodejs_gzip_compression" {
+  default = "true"
+  description = "Nodejs Gzip compression"
+}
